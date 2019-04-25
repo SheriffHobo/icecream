@@ -7,7 +7,7 @@ var icecream = require("../models/icecreams.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  icecream.all(function(data) {
+  icecream.selectAll(function(data) {
     var hbsObject = {
       icecream: data
     };
@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/icecreams", function(req, res) {
-  icecream.create([
+  icecream.insertOne([
     "name", "devoured"
   ], [
     req.body.name, req.body.devoured
@@ -32,7 +32,7 @@ router.put("/api/icecreams/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  icecream.update({
+  icecream.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
