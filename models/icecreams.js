@@ -2,18 +2,18 @@
 var orm = require("../config/orm.js");
 
 var icecreams = {
-  all: function(cb) {
+  selectAll: function(cb) {
     orm.selectAll("icecream", function(res) {
       cb(res);
     });
   },
   // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
+  createOne: function(cols, vals, cb) {
     orm.insertOne("icecream", cols, vals, function(res) {
       cb(res);
     });
   },
-  update: function(objColVals, condition, cb) {
+  updateOne: function(objColVals, condition, cb) {
     orm.updateOne("icecream", objColVals, condition, function(res) {
       cb(res);
     });
@@ -25,5 +25,5 @@ var icecreams = {
   }
 };
 
-// Export the database functions for the controller (catsController.js).
+// Export the database functions for the controller icecream_controller.js.
 module.exports = icecreams;

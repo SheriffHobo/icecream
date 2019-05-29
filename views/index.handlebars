@@ -1,42 +1,38 @@
-<h1>Ice Cream!</h1>
+<div class="container">
 
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col s6">
-        {{#each icecream}}
-          {{#unless this.devoured}}
-            <div>
-              <form action="/icecream/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='icecreamAvailable'> {{this.icecream_name}}</button>
-              </form>
-            </div>
-          {{/unless}}
-        {{/each}}
-      </div>
+  <h1>Ice Cream!</h1>
 
-      <div class="col s6">
-        {{#each icecream}}
-          {{#if this.devoured}}
-            <div class='icecreamEaten'>
-              <div>
-                {{this.icecream_name}}
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div>
-    </div>
+  <div id="icbutns" class="col">
+    {{#each icecream}}
+      {{#unless this.devoured}}
+        <div>
+          <form>
+            <button type="submit" flavor={{this.id}} class='icecreamAvailable'> {{this.name}}</button>
+          </form>
+        </div>
+      {{/unless}}
+    {{/each}}
   </div>
-</main>
 
-<h2>Add your favorite Ice Cream!</h2>
+  <div class="col">
+    {{#each icecream}}
+      {{#if this.devoured}}
+        <div class='icecreamEaten'>
+          <div>
+            {{this.name}}
+          </div>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
 
-<div class="row">
-  <div class="col s12">
-    <form action="/icecreams" method="POST">
+  <h2>Add your favorite Ice Cream!</h2>
+
+  <div class="col">
+    <form action="/icecream_controller" method="POST">
       <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
       <button type="submit" class="addIceCreamButton">Add your Ice Cream</button>
     </form>
   </div>
+
 </div>
