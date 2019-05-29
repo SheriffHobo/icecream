@@ -9,7 +9,7 @@ var icecreams = {
   },
   // The variables cols and vals are arrays.
   createOne: function(cols, vals, cb) {
-    orm.insertOne("icecream", cols, vals, function(res) {
+    orm.createOne("icecream", cols, vals, function(res) {
       cb(res);
     });
   },

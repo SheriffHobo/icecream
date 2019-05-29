@@ -2,7 +2,7 @@
 
   <h1>Ice Cream!</h1>
 
-  <div id="icbutns" class="col">
+  <div id="icbutns" class="icnotdevoured col-6">
     {{#each icecream}}
       {{#unless this.devoured}}
         <div>
@@ -14,7 +14,7 @@
     {{/each}}
   </div>
 
-  <div class="col">
+  <div class="icdevoured col-6">
     {{#each icecream}}
       {{#if this.devoured}}
         <div class='icecreamEaten'>
@@ -29,9 +29,9 @@
   <h2>Add your favorite Ice Cream!</h2>
 
   <div class="col">
-    <form action="/icecream_controller" method="POST">
+    <form>
       <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
-      <button type="submit" class="addIceCreamButton">Add your Ice Cream</button>
+      <button type="submit" id="addIceCreamButton">Add your Ice Cream</button>
     </form>
   </div>
 

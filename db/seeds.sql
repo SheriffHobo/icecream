@@ -1,3 +1,3 @@
-INSERT INTO icecream (name) VALUES ('Rocky Road');
-INSERT INTO icecream (name) VALUES ('Burnt Caramel');
-INSERT INTO icecream (name) VALUES ('Roadrash');
+INSERT INTO icecream (name, devoured) VALUES ('Rocky Road', false);
+INSERT INTO icecream (name, devoured) VALUES ('Burnt Caramel', false);
+INSERT INTO icecream (name, devoured) VALUES ('Roadrash', false);

@@ -9,6 +9,21 @@ $("#icbutns").on("click", "button", function() {
     }).then(function(res) {
         console.log(res);
     })
-    event.preventDefault();
-})
+    location.reload();
+});
+
+$("#addIceCreamButton").on("click", (event) => {
+    var iceCream = {
+        name: $("#name").val()        
+    }
+    $.ajax({
+        url: `/api/icecreams`,
+        type: "POST",
+        data: iceCream
+    }).then(function(res) {
+        console.log(res);
+    })
+    location.reload();
+});
+
 });

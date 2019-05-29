@@ -20,10 +20,11 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/icecreams", function(req, res) {
-  icecream.insertOne([
-    "name", "devoured"
+  console.log(req.body);
+  icecream.createOne([
+    "name"
   ], [
-    req.body.name, req.body.devoured
+    req.body.name
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
