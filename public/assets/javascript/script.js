@@ -26,4 +26,18 @@ $("#addIceCreamButton").on("click", function() {
     location.reload();
 });
 
+$("#iceaten").on("click", function() {
+    var iceCream = {
+        id: $(this).val()        
+    }
+    $.ajax({
+        url: `/api/icecreams`,
+        type: "DELETE",
+        data: iceCream
+    }).then(function(res) {
+        console.log(res);
+    })
+    location.reload();
+});
+
 });

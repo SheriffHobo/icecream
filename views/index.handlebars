@@ -16,13 +16,13 @@
       {{/each}}
     </div>
 
-    <div class="col-6">
+    <div id="iceaten" class="col-6">
       <h4>Devoured! Click a flavor to remove.</h4>
       {{#each icecream}}
         {{#if this.devoured}}
           <div>
             <form>
-              <button type="submit" value={{this.id}} id='icecreamDevoured'> {{this.name}}</button>
+              <button type="submit" value={{this.id}} class='icecreamDevoured'> {{this.name}}</button>
             </form>
           </div>
         {{/if}}

@@ -28,7 +28,7 @@ form {
     overflow: hidden;
 }
 
-#icecreamDevoured {
+.icecreamDevoured {
     width: 200px;
     max-width: 200px;
     overflow: hidden;
