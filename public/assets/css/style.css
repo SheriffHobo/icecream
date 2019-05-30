@@ -1,7 +1,5 @@
 body {
     background-color: aqua;
-    margin: auto;
-    width: 75%;
 }
 
 .contianer {
@@ -12,8 +10,8 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5%;
-    width: 40%;
+    margin-top: 3%;
+    width: 30%;
 }
 
 h1, h2, h4 {
