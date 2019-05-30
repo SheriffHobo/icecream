@@ -16,11 +16,23 @@ img {
     width: 40%;
 }
 
-h1, h2 {
+h1, h2, h4 {
     text-align: center;
 }
 
 form {
     text-align: center;
+}
+
+.icecreamAvailable {
+    width: 200px;
+    max-width: 200px;
+    overflow: hidden;
+}
+
+.icecreamDevoured {
+    width: 200px;
+    max-width: 200px;
+    overflow: hidden;
 }
 

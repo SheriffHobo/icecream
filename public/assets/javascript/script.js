@@ -12,7 +12,7 @@ $("#icbutns").on("click", "button", function() {
     location.reload();
 });
 
-$("#addIceCreamButton").on("click", (event) => {
+$("#addIceCreamButton").on("click", function() {
     var iceCream = {
         name: $("#name").val()        
     }

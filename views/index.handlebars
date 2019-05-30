@@ -1,38 +1,44 @@
+<h1>Ice Cream!</h1>
+
 <div class="container">
 
-  <h1>Ice Cream!</h1>
-
-  <div id="icbutns" class="icnotdevoured col-6">
-    {{#each icecream}}
-      {{#unless this.devoured}}
-        <div>
-          <form>
-            <button type="submit" flavor={{this.id}} class='icecreamAvailable'> {{this.name}}</button>
-          </form>
-        </div>
-      {{/unless}}
-    {{/each}}
-  </div>
-
-  <div class="icdevoured col-6">
-    {{#each icecream}}
-      {{#if this.devoured}}
-        <div class='icecreamEaten'>
+  <div class="row">
+    <div id="icbutns" class="col-6">
+      <h4>Click a flavor to Devour!</h4>
+      {{#each icecream}}
+        {{#unless this.devoured}}
           <div>
-            {{this.name}}
+            <form>
+              <button type="submit" flavor={{this.id}} class='icecreamAvailable'> {{this.name}}</button>
+            </form>
           </div>
-        </div>
-      {{/if}}
-    {{/each}}
+        {{/unless}}
+      {{/each}}
+    </div>
+
+    <div class="col-6">
+      <h4>Devoured! Click a flavor to remove.</h4>
+      {{#each icecream}}
+        {{#if this.devoured}}
+          <div>
+            <form>
+              <button type="submit" flavor={{this.id}} class='icecreamDevoured'> {{this.name}}</button>
+            </form>
+          </div>
+        {{/if}}
+      {{/each}}
+    </div>
   </div>
 
-  <h2>Add your favorite Ice Cream!</h2>
+  <div class="row">
+    <h2>Add your favorite Ice Cream!</h2>
 
-  <div class="col">
-    <form>
-      <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
-      <button type="submit" id="addIceCreamButton">Add your Ice Cream</button>
-    </form>
+    <div class="col">
+      <form>
+        <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
+        <button type="submit" id="addIceCreamButton">Add your Ice Cream</button>
+      </form>
+    </div>
   </div>
 
 </div>
