@@ -13,7 +13,7 @@
   </div>
 
   <div class="row">
-    <div id="icbutns" class="col-6">
+    <div id="icbutns" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
       <h4>Click a flavor to Devour!</h4>
       {{#each icecream}}
         {{#unless this.devoured}}
@@ -26,7 +26,7 @@
       {{/each}}
     </div>
 
-    <div id="iceaten" class="col-6">
+    <div id="iceaten" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
       <h4>Devoured! Click a flavor to remove.</h4>
       {{#each icecream}}
         {{#if this.devoured}}
