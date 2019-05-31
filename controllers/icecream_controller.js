@@ -9,18 +9,19 @@ var icecream = require("../models/icecreams.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  console.dir(icecream);
+  console.log('josh1');
   icecream.selectAll(function(data) {
     var hbsObject = {
       icecream: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/icecreams", function(req, res) {
-  console.log(req.body);
+  console.log('josh2');
+  //console.log(req.body);
   icecream.createOne([
     "name"
   ], [
@@ -34,7 +35,8 @@ router.post("/api/icecreams", function(req, res) {
 router.post("/api/icecreams/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  console.log('josh3');
+  //console.log("condition", condition);
 
   icecream.updateOne( {
     devoured: true
@@ -49,6 +51,7 @@ router.post("/api/icecreams/:id", function(req, res) {
 });
 
 router.delete("/api/icecreams/:id", function(req, res) {
+  console.log(req.params.id);
   var condition = "id = " + req.params.id;
 
   icecream.delete(condition, function(result) {
@@ -59,7 +62,10 @@ router.delete("/api/icecreams/:id", function(req, res) {
       res.status(200).end();
     }
   });
+  
+  res.end('DELETE');
 });
+
 
 // Export routes for server.js to use.
 module.exports = router;

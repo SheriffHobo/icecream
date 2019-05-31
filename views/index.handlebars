@@ -3,6 +3,16 @@
 <div class="container">
 
   <div class="row">
+    <div class="col">
+      <h2>Add your favorite Ice Cream!</h2>
+      <form>
+        <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
+        <button type="submit" id="addIceCreamButton">Add your Ice Cream</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
     <div id="icbutns" class="col-6">
       <h4>Click a flavor to Devour!</h4>
       {{#each icecream}}
@@ -27,17 +37,6 @@
           </div>
         {{/if}}
       {{/each}}
-    </div>
-  </div>
-
-  <div class="row">
-    <h2>Add your favorite Ice Cream!</h2>
-
-    <div class="col">
-      <form>
-        <input type="text" id="name" name="icecream_name" placeholder="Creamy and delicious Ice Cream">
-        <button type="submit" id="addIceCreamButton">Add your Ice Cream</button>
-      </form>
     </div>
   </div>
 

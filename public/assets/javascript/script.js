@@ -26,7 +26,7 @@ $("#addIceCreamButton").on("click", function() {
     location.reload();
 });
 
-$("#iceaten").on("click", function() {
+/*$("#iceaten").on("click", function() {
     var iceCream = {
         id: $(this).val()        
     }
@@ -38,6 +38,24 @@ $("#iceaten").on("click", function() {
         console.log(res);
     })
     location.reload();
-});
+});*/
+$('.icecreamDevoured').on("click", function() {
+    /*var iceCream = {
+        id: $(this).val()        
+    }*/
+    $.ajax({
+        url: `/api/icecreams/${$(this).val()}`,
+        type: "DELETE",
+        //type: "POST",
+        //data: iceCream
+    }).done(function() {
+        console.log('DONE');
+        location.reload();
+        //location.reload();
+    }).fail(function(error){
+        console.log(error);
+    })
 
+    return false;
+});
 });
